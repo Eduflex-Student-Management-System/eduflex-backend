@@ -38,4 +38,5 @@ public class StudentServiceImpl implements StudentService {
     public Student getStudentById(int studentId) {
         return studentRepository.findById(studentId).get();
     }
+
 }
