@@ -33,9 +33,5 @@ public class FacultyServiceImpl implements FacultyService{
 	@Override
 	public void deleteFaculty(int facultyId) {
 		facultyRepository.deleteById(facultyId);
-		
 	}
-
-	
-
 }
