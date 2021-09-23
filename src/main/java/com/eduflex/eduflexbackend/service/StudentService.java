@@ -1,6 +1,9 @@
 package com.eduflex.eduflexbackend.service;
 
 import com.eduflex.eduflexbackend.model.Student;
+import com.eduflex.eduflexbackend.model.StudentLeave;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 

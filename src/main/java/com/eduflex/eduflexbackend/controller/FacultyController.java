@@ -40,7 +40,6 @@ public class FacultyController {
 
 	@DeleteMapping("/faculty/{facultyId}")
 	public void deleteFaculty(@PathVariable int facultyId) {
-		
 		facultyService.deleteFaculty(facultyId);
 		
 	}
