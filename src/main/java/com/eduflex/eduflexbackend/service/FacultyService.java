@@ -10,6 +10,9 @@ public interface FacultyService {
 	Faculty updateFaculty(Faculty faculty);
 	List<Faculty> getAllFaculties();
 	void deleteFaculty(int facultyId);
+	//List<> getSubjectByFacultyId(int facultyId);
+	Faculty getFacultyByFacultyId(int facultyLeaveId);
+	
 	
 }
 	

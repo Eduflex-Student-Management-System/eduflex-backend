@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eduflex.eduflexbackend.model.Faculty;
 import com.eduflex.eduflexbackend.service.FacultyService;
 
-@RestController
 @CrossOrigin
+@RestController
 public class FacultyController {
 	
 	@Autowired
@@ -34,15 +34,23 @@ public class FacultyController {
 	
 	@GetMapping("/faculties")
 	public List<Faculty> getAllFaculties() {
-		
 		return facultyService.getAllFaculties();
 	}
 
 	@DeleteMapping("/faculty/{facultyId}")
 	public void deleteFaculty(@PathVariable int facultyId) {
-		
 		facultyService.deleteFaculty(facultyId);
-		
+	}
+//	
+//	@GetMapping("/subjects/faculty/{facultyId}")
+//	public List<Faculty> getSubjectByFacultyId(@PathVariable int facultyId) {
+//		return facultyService.getSubjectByFacultyId(facultyId);
+//	}
+	
+	@GetMapping("/faculty/{facultyId}")
+	public Faculty getFacultyById(@PathVariable int facultyId) {
+		return facultyService.getFacultyByFacultyId(facultyId);
 	}
 
+	
 }
