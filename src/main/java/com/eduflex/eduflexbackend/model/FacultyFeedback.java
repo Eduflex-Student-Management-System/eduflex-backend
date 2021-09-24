@@ -20,6 +20,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 @Getter
 @Setter
 @ToString
@@ -35,6 +36,6 @@ public class FacultyFeedback {
 	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "facultyId", referencedColumnName = "facultyId")
+    	@JoinColumn(name = "facultyId", referencedColumnName = "facultyId")
 	private Faculty faculty;
 }
