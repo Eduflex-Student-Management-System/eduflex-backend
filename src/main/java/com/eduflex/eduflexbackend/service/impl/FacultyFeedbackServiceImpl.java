@@ -1,17 +1,15 @@
 package com.eduflex.eduflexbackend.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.eduflex.eduflexbackend.model.Faculty;
 import com.eduflex.eduflexbackend.model.FacultyFeedback;
-import com.eduflex.eduflexbackend.model.Student;
-import com.eduflex.eduflexbackend.model.StudentFeedback;
 import com.eduflex.eduflexbackend.repository.FacultyFeedbackRepository;
 import com.eduflex.eduflexbackend.repository.FacultyRepository;
 import com.eduflex.eduflexbackend.service.FacultyFeedbackService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
 public class FacultyFeedbackServiceImpl implements FacultyFeedbackService{
 	
