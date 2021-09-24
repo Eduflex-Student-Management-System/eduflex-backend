@@ -14,23 +14,33 @@ public class StudentLeaveController {
     @Autowired
     StudentLeaveService studentLeaveService;
 
-    @GetMapping("student/{studentId}/studentLeaves")
+    @GetMapping("/student/{studentId}/studentLeaves")
     public List<StudentLeave> getStudentLeavesByStudentId(@PathVariable int studentId) {
         return studentLeaveService.getStudentLeavesByStudentId(studentId);
     }
 
-    @GetMapping("student/{studentId}/studentLeave/{studentLeaveId}")
-    public StudentLeave getStudentLeaveByStudentLeaveId(@PathVariable int studentId, @PathVariable int studentLeaveId) {
-        return studentLeaveService.getStudentLeaveByStudentLeaveId(studentId, studentLeaveId);
+    @GetMapping("/student/studentLeave/{studentLeaveId}")
+    public StudentLeave getStudentLeaveByStudentLeaveId(@PathVariable int studentLeaveId) {
+        return studentLeaveService.getStudentLeaveByStudentLeaveId(studentLeaveId);
     }
 
-    @PutMapping("student/{studentId}/studentLeave")
+    @PutMapping("/student/{studentId}/studentLeave")
     public StudentLeave addStudentLeaveToStudent(@RequestBody StudentLeave studentLeave, @PathVariable int studentId) {
         return studentLeaveService.addStudentLeaveToStudent(studentId, studentLeave);
     }
 
-    @DeleteMapping("student/{studentId}/studentLeave/{studentLeaveId}")
+    @DeleteMapping("/student/studentLeave/{studentLeaveId}")
+    public void deleteStudentLeaveByStudentLeaveId(@PathVariable int studentLeaveId) {
+        studentLeaveService.deleteStudentLeaveByLeaveId(studentLeaveId);
+    }
+
+    @DeleteMapping("/student/{studentId}/studentLeave/{studentLeaveId}")
     public void deleteStudentLeave(@PathVariable int studentId, @PathVariable int studentLeaveId) {
         studentLeaveService.deleteStudentLeave(studentId, studentLeaveId);
+    }
+
+    @GetMapping("/studentLeaves")
+    public List<StudentLeave> getAllStudentLeaves() {
+        return studentLeaveService.getAllStudentLeaves();
     }
 }

@@ -29,6 +29,9 @@ public class Student {
     @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
     private List<StudentLeave> studentLeaveList;
 
+    @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
+    private List<StudentFeedback> studentFeedbackList;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
