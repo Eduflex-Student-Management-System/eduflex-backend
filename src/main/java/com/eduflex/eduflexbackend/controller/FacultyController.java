@@ -41,16 +41,9 @@ public class FacultyController {
 	public void deleteFaculty(@PathVariable int facultyId) {
 		facultyService.deleteFaculty(facultyId);
 	}
-//	
-//	@GetMapping("/subjects/faculty/{facultyId}")
-//	public List<Faculty> getSubjectByFacultyId(@PathVariable int facultyId) {
-//		return facultyService.getSubjectByFacultyId(facultyId);
-//	}
 	
 	@GetMapping("/faculty/{facultyId}")
 	public Faculty getFacultyById(@PathVariable int facultyId) {
 		return facultyService.getFacultyByFacultyId(facultyId);
-	}
-
-	
+	}	
 }
