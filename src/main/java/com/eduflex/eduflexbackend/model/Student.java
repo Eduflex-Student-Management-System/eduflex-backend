@@ -2,7 +2,7 @@ package com.eduflex.eduflexbackend.model;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
