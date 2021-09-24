@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.eduflex.eduflexbackend.model.FacultyFeedback;
 
-
 public interface FacultyFeedbackService {
 	FacultyFeedback addFacultyFeedbackToFaculty(int facultyId, FacultyFeedback facultyFeedback);
 	FacultyFeedback getFacultyFeedbackByFacultyFeedbackId(int facultyFeedbackId);
