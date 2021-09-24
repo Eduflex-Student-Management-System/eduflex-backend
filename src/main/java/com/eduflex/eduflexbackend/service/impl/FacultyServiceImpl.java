@@ -33,7 +33,6 @@ public class FacultyServiceImpl implements FacultyService{
 	@Override
 	public void deleteFaculty(int facultyId) {
 		facultyRepository.deleteById(facultyId);
-		
 	}
 
 //	@Override
@@ -46,7 +45,4 @@ public class FacultyServiceImpl implements FacultyService{
 	public Faculty getFacultyByFacultyId(int facultyId) {
 		return facultyRepository.findById(facultyId).get();
 	}
-
-	
-
 }

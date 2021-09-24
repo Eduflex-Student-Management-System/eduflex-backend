@@ -1,6 +1,7 @@
 package com.eduflex.eduflexbackend.controller;
 
 import com.eduflex.eduflexbackend.model.Student;
+import com.eduflex.eduflexbackend.model.StudentLeave;
 import com.eduflex.eduflexbackend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -2,31 +2,32 @@ package com.eduflex.eduflexbackend.model;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
 @Setter
-@ToString
 @RequiredArgsConstructor
 @Entity
 @Table
 public class Student {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int studentId;
     private String studentName;
     private String studentUsername;
     private String studentPassword;
     private String studentCity;
+
+    @Lob
+    @Column(columnDefinition = "CLOB")
     private String studentAvatar;
+
+    @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
+    private List<StudentLeave> studentLeaveList;
 
     @Override
     public boolean equals(Object o) {

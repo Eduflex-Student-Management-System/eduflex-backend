@@ -1,6 +1,8 @@
 package com.eduflex.eduflexbackend.service.impl;
 
 import com.eduflex.eduflexbackend.model.Student;
+import com.eduflex.eduflexbackend.model.StudentLeave;
+import com.eduflex.eduflexbackend.repository.StudentLeaveRepository;
 import com.eduflex.eduflexbackend.repository.StudentRepository;
 import com.eduflex.eduflexbackend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     StudentRepository studentRepository;
+
+    @Autowired
+    StudentLeaveRepository studentLeaveRepository;
 
     @Override
     public Student addStudent(Student student) {
@@ -38,4 +43,5 @@ public class StudentServiceImpl implements StudentService {
     public Student getStudentById(int studentId) {
         return studentRepository.findById(studentId).get();
     }
+
 }
