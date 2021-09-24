@@ -31,14 +31,24 @@ public class StudentLeaveServiceImpl implements StudentLeaveService {
     }
 
     @Override
+    public void deleteStudentLeaveByLeaveId(int studentLeaveId) {
+        studentLeaveRepository.deleteById(studentLeaveId);
+    }
+
+    @Override
     public List<StudentLeave> getStudentLeavesByStudentId(int studentId) {
         Student student = studentRepository.findById(studentId).get();
         return studentLeaveRepository.findStudentLeavesByStudent(student);
     }
 
     @Override
-    public StudentLeave getStudentLeaveByStudentLeaveId(int studentId, int studentLeaveId) {
+    public StudentLeave getStudentLeaveByStudentLeaveId(int studentLeaveId) {
         return studentLeaveRepository.findById(studentLeaveId).get();
+    }
+
+    @Override
+    public List<StudentLeave> getAllStudentLeaves() {
+        return studentLeaveRepository.findAll();
     }
 
     @Override

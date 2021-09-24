@@ -20,9 +20,8 @@ import com.eduflex.eduflexbackend.service.FacultyFeedbackService;
 @RestController
 public class FacultyfeedbackController  {
 	
-	@Autowired
-	FacultyFeedbackService facultyFeedbackService;
-	
+    @Autowired
+    FacultyFeedbackService facultyFeedbackService;
 
     @PutMapping("/faculty/{facultyId}/facultyFeedback")
     public FacultyFeedback addFacultyFeedbackToStudent(@PathVariable int facultyId, @RequestBody FacultyFeedback facultyFeedback) {
@@ -53,5 +52,4 @@ public class FacultyfeedbackController  {
     public void deleteFacultyFeedbackByFacultyFeedbackId( @PathVariable int facultyFeedbackId) {
     	facultyFeedbackService.deleteFacultyFeedbackByFacultyFeedbackId(facultyFeedbackId);
     }
-
 }
