@@ -9,5 +9,4 @@ import com.eduflex.eduflexbackend.model.Faculty;
 
 @Repository
 public interface FacultyRepository extends JpaRepository<Faculty, Integer>{
-	List<Faculty> findAllSubjectByFacultyId(int facultyId);
 }
