@@ -27,6 +27,7 @@ import lombok.ToString;
 @Entity
 @Table
 public class Faculty {
+	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private int facultyId;
@@ -45,7 +46,6 @@ public class Faculty {
 	@OneToMany(mappedBy="faculty",cascade=CascadeType.ALL)
 	List<FacultyFeedback> facultyFeedbackList;
 	
-    @OneToMany(mappedBy = "faculty" ,cascade=CascadeType.ALL)
-    List<Subject> subjectsList;
-
+    	@OneToMany(mappedBy = "faculty" ,cascade=CascadeType.ALL)
+    	List<Subject> subjectsList;
 }
