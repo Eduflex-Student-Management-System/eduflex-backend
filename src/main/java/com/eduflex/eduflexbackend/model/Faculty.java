@@ -13,6 +13,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -25,6 +27,7 @@ import lombok.ToString;
 @Entity
 @Table
 public class Faculty {
+	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private int facultyId;
@@ -33,7 +36,7 @@ public class Faculty {
 	private String facultyPassword;
 	private String facultyCity;
 	
-	@Lob
+	@Lob 
 	@Column(columnDefinition = "CLOB")
 	private String facultyAvtar;
 	
@@ -42,5 +45,7 @@ public class Faculty {
 	
 	@OneToMany(mappedBy="faculty",cascade=CascadeType.ALL)
 	List<FacultyFeedback> facultyFeedbackList;
-
+	
+    	@OneToMany(mappedBy = "faculty" ,cascade=CascadeType.ALL)
+    	List<Subject> subjectsList;
 }

@@ -3,7 +3,6 @@ package com.eduflex.eduflexbackend.service;
 import java.util.List;
 
 import com.eduflex.eduflexbackend.model.FacultyFeedback;
-import com.eduflex.eduflexbackend.model.StudentFeedback;
 
 public interface FacultyFeedbackService {
 	FacultyFeedback addFacultyFeedbackToFaculty(int facultyId, FacultyFeedback facultyFeedback);

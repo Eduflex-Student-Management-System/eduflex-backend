@@ -24,7 +24,6 @@ public class SubjectController {
 
 	@PostMapping("/subject")
 	public Subject addSubject(@RequestBody Subject subject) {
-		// TODO Auto-generated method stub
 		return subjectService.addSubject(subject)  ;
 	}
 
@@ -35,20 +34,31 @@ public class SubjectController {
 
 	@GetMapping("/subjects")
 	public List<Subject> getAllSubjects() {
-		// TODO Auto-generated method stub
 		return subjectService.getAllSubjects();
 	}
 
 	@DeleteMapping("/subject/{subjectId}")
 	public void deleteSubject(@PathVariable int subjectId) {
-		subjectService.deleteSubject(subjectId);
-		
+		subjectService.deleteSubjectBySubjectId(subjectId);
 	}
 
 	@GetMapping("/subject/{subjectId}")
 	public Subject getSubjectById(@PathVariable int subjectId) {
-		// TODO Auto-generated method stub
-		return subjectService.getSubjectById(subjectId);
+		return subjectService.getSubjectBySubjectId(subjectId);
 	}
-
+	
+	@PutMapping("/subject/{subjectId}/faculty/{facultyId}")
+	Subject addSubjectToFaculty(@PathVariable int subjectId,@PathVariable int facultyId) {
+		return subjectService.addSubjectToFaculty(subjectId, facultyId);
+	}
+	
+	@GetMapping("/subjects/faculty/{facultyId}")
+	public List<Subject> getAllSubjectsByFacultyId(@PathVariable int facultyId){
+		return subjectService.getAllSubjectsByFacultyId(facultyId);
+	}
+	
+	@DeleteMapping("/subject/{subjectId}/faculty/{facultyId}")
+	public void deleteSubjectByFacultyId(@PathVariable int subjectId,@PathVariable int facultyId){
+		 subjectService.deleteSubjectByFacultyId(subjectId,facultyId);
+	}
 }
