@@ -60,12 +60,13 @@ public class SubjectServiceImpl implements SubjectService {
 	}
 
 	@Override
-	public void deleteSubjectByFacultyId(int subjectId,int facultyId) {
+	public void deleteSubjectByFacultyId(int subjectId, int facultyId) {
 		Faculty faculty = facultyRepository.findById(facultyId).get();
 		 List<Subject> subjectList = subjectRepository.findSubjectsByFaculty(faculty);
-		 for(Subject subject:subjectList){
-			 if(subject.getSubjectId()==subjectId)
-				 	subjectRepository.deleteById(subjectId);
+		 for(Subject subject:subjectList) {
+			 if(subject.getSubjectId()==subjectId) {
+				subjectRepository.deleteById(subjectId);
 			 }
 		}
+	}
 }
