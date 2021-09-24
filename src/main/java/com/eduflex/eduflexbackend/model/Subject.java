@@ -1,7 +1,5 @@
 package com.eduflex.eduflexbackend.model;
 
-
-
 import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.CascadeType;
@@ -20,7 +18,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Getter
 @Setter
 @ToString
@@ -28,6 +25,7 @@ import lombok.ToString;
 @Entity
 @Table
 public class Subject {
+	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private int subjectId;
@@ -35,7 +33,6 @@ public class Subject {
 	
 	@JsonIgnore
 	@ManyToOne
-    @JoinColumn(name = "facultyId", referencedColumnName = "facultyId")
-    private Faculty faculty;
-	
+    	@JoinColumn(name = "facultyId", referencedColumnName = "facultyId")
+    	private Faculty faculty;	
 }
