@@ -1,5 +1,6 @@
 package com.eduflex.eduflexbackend.controller;
 
+import com.eduflex.eduflexbackend.model.ClassYear;
 import com.eduflex.eduflexbackend.model.Student;
 import com.eduflex.eduflexbackend.model.StudentLeave;
 import com.eduflex.eduflexbackend.service.StudentService;
@@ -38,5 +39,10 @@ public class StudentController {
     @GetMapping("/student/{studentId}")
     public Student getStudentById(@PathVariable int studentId) {
         return studentService.getStudentById(studentId);
+    }
+
+    @GetMapping("/students/{classYearId}")
+    public List<Student> getAllStudentsByClassYearId(@PathVariable int classYearId){
+        return studentService.getAllStudentsByClassYearId(classYearId);
     }
 }

@@ -1,7 +1,9 @@
 package com.eduflex.eduflexbackend.service.impl;
 
+import com.eduflex.eduflexbackend.model.ClassYear;
 import com.eduflex.eduflexbackend.model.Student;
 import com.eduflex.eduflexbackend.model.StudentLeave;
+import com.eduflex.eduflexbackend.repository.ClassYearRepository;
 import com.eduflex.eduflexbackend.repository.StudentLeaveRepository;
 import com.eduflex.eduflexbackend.repository.StudentRepository;
 import com.eduflex.eduflexbackend.service.StudentService;
@@ -15,6 +17,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     StudentRepository studentRepository;
+    @Autowired
+    ClassYearRepository classYearRepository;
 
     @Autowired
     StudentLeaveRepository studentLeaveRepository;
@@ -44,4 +48,9 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findById(studentId).get();
     }
 
+    @Override
+    public List<Student> getAllStudentsByClassYearId(int classYearId) {
+        ClassYear classYear= classYearRepository.findById(classYearId).get();
+        return studentRepository.findStudentsByClassYear(classYear);
+    }
 }
