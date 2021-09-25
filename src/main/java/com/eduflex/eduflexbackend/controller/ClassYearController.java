@@ -12,6 +12,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class ClassYearController {
+    
     @Autowired
     ClassYearService classYearService;
 
@@ -19,21 +20,24 @@ public class ClassYearController {
     public ClassYear addClassYear(@RequestBody ClassYear classYear) {
         return classYearService.addClassYear(classYear);
     }
+    
     @GetMapping("/classYear/{classYearId}")
     public ClassYear getClassYearById(@PathVariable int classYearId) {
         return classYearService.getClassYearById(classYearId);
     }
+    
     @DeleteMapping("/classYear/{classYearId}")
     public void deleteClassYearById(@PathVariable int classYearId) {
         classYearService.deleteClassYearById(classYearId);
     }
+    
     @GetMapping("/classYears")
     public List<ClassYear> getAllClassYears() {
         return classYearService.getAllClassYears();
     }
+    
     @PutMapping("/student/{studentId}/classYear/{classYearId}")
     public ClassYear addClassYearToStudent(@PathVariable int studentId, @PathVariable int classYearId){
         return classYearService.addClassYearToStudent(studentId,classYearId);
     }
-
 }
