@@ -1,5 +1,6 @@
 package com.eduflex.eduflexbackend.service;
 
+import com.eduflex.eduflexbackend.model.ClassYear;
 import com.eduflex.eduflexbackend.model.Student;
 import com.eduflex.eduflexbackend.model.StudentLeave;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,4 +14,7 @@ public interface StudentService {
     List<Student> getAllStudents();
     void deleteStudent(int studentId);
     Student getStudentById(int studentId);
+    List<Student> getAllStudentsByClassYearId(int classYearId);
+
+
 }

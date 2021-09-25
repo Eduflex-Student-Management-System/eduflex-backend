@@ -1,5 +1,6 @@
 package com.eduflex.eduflexbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -34,6 +35,10 @@ public class Student {
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private Result result;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="classYearId" , referencedColumnName="classYearId")
+    private ClassYear classYear;
 
     @Override
     public boolean equals(Object o) {
