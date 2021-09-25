@@ -20,7 +20,7 @@ public class StudentLeaveServiceImpl implements StudentLeaveService {
     StudentRepository studentRepository;
 
     @Override
-    public void deleteStudentLeave(int studentId, int studentLeaveId) {
+    public void deleteStudentLeaveByStudentId(int studentId, int studentLeaveId) {
         Student student = studentRepository.findById(studentId).get();
         List<StudentLeave> studentLeaveList = studentLeaveRepository.findStudentLeavesByStudent(student);
         for(StudentLeave studentLeave : studentLeaveList) {
@@ -31,7 +31,7 @@ public class StudentLeaveServiceImpl implements StudentLeaveService {
     }
 
     @Override
-    public void deleteStudentLeaveByLeaveId(int studentLeaveId) {
+    public void deleteStudentLeaveByStudentLeaveId(int studentLeaveId) {
         studentLeaveRepository.deleteById(studentLeaveId);
     }
 

@@ -9,6 +9,6 @@ public interface StudentLeaveService {
     StudentLeave getStudentLeaveByStudentLeaveId(int studentLeaveId);
     List<StudentLeave> getAllStudentLeaves();
     List<StudentLeave> getStudentLeavesByStudentId(int studentId);
-    void deleteStudentLeave(int studentId, int studentLeaveId);
-    void deleteStudentLeaveByLeaveId(int studentLeaveId);
+    void deleteStudentLeaveByStudentId(int studentId, int studentLeaveId);
+    void deleteStudentLeaveByStudentLeaveId(int studentLeaveId);
 }

@@ -31,12 +31,12 @@ public class StudentLeaveController {
 
     @DeleteMapping("/student/studentLeave/{studentLeaveId}")
     public void deleteStudentLeaveByStudentLeaveId(@PathVariable int studentLeaveId) {
-        studentLeaveService.deleteStudentLeaveByLeaveId(studentLeaveId);
+        studentLeaveService.deleteStudentLeaveByStudentLeaveId(studentLeaveId);
     }
 
     @DeleteMapping("/student/{studentId}/studentLeave/{studentLeaveId}")
     public void deleteStudentLeave(@PathVariable int studentId, @PathVariable int studentLeaveId) {
-        studentLeaveService.deleteStudentLeave(studentId, studentLeaveId);
+        studentLeaveService.deleteStudentLeaveByStudentId(studentId, studentLeaveId);
     }
 
     @GetMapping("/studentLeaves")
