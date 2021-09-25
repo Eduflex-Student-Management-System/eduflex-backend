@@ -32,6 +32,9 @@ public class Student {
     @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
     private List<StudentFeedback> studentFeedbackList;
 
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private Result result;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
