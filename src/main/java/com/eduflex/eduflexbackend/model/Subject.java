@@ -29,8 +29,4 @@ public class Subject {
 	@ManyToOne
 	@JoinColumn(name = "facultyId", referencedColumnName = "facultyId")
 	private Faculty faculty;
-
-//	@JsonIgnore
-//	@OneToOne(mappedBy = "subject", cascade = CascadeType.ALL)
-//	private Attendance attendance;
 }
