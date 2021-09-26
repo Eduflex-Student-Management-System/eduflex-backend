@@ -45,4 +45,9 @@ public class StudentController {
     public List<Student> getAllStudentsByClassYearId(@PathVariable int classYearId){
         return studentService.getAllStudentsByClassYearId(classYearId);
     }
+
+    @PutMapping("/student/{studentId}/classYear/{classYearId}")
+    public Student addClassYearToStudent(@PathVariable int studentId, @PathVariable int classYearId){
+        return studentService.addClassYearToStudent(studentId,classYearId);
+    }
 }

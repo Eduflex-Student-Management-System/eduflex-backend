@@ -6,23 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.eduflex.eduflexbackend.model.Course;
+import com.eduflex.eduflexbackend.model.Student;
 import com.eduflex.eduflexbackend.repository.CourseRepository;
+import com.eduflex.eduflexbackend.repository.StudentRepository;
 import com.eduflex.eduflexbackend.service.CourseService;
 
 @Service
 public class CourseServiceImpl implements CourseService {
-	
+
 	@Autowired
 	CourseRepository courseRepository;
-	
+
+	@Autowired
+	StudentRepository studentRepository;
+
 	@Override
 	public Course addCourse(Course course) {
 		return courseRepository.save(course);
 	}
 
 	@Override
-	public Course updateCourse(Course course) {
-		return courseRepository.save(course);
+	public Student addCourseToStudent(int studentId, int courseId) {
+		Student student = studentRepository.findById(studentId).get();
+		Course course = courseRepository.findById(courseId).get();
+		student.setCourse(course);
+		return studentRepository.save(student);
 	}
 
 	@Override
@@ -31,14 +39,9 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public void deleteCourse(int courseId) {
-		courseRepository.deleteById(courseId);
-	}
-
-	@Override
-	public Course getCourseById(int courseId) {
+	public Course getCourseByCourseId(int courseId) {
 		return courseRepository.findById(courseId).get();
 	}
 
-	
+
 }

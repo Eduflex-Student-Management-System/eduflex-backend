@@ -10,6 +10,4 @@ public interface ClassYearService {
     ClassYear getClassYearById(int classYearId);
     void deleteClassYearById(int classYearId);
     List<ClassYear> getAllClassYears();
-    ClassYear addClassYearToStudent(int studentId, int classYearId);
-
 }

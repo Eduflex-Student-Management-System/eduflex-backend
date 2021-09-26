@@ -38,14 +38,4 @@ public class ClassYearServiceImpl implements ClassYearService {
         return classYearRepository.findAll();
     }
 
-    @Override
-    public ClassYear addClassYearToStudent(int studentId, int classYearId) {
-        Student student = studentRepository.findById(studentId).get();
-        ClassYear classYear = classYearRepository.findById(classYearId).get();
-        student.setClassYear(classYear);
-        studentRepository.save(student);
-        return classYear;
-    }
-
-
 }

@@ -9,5 +9,4 @@ import java.util.List;
 
 @Repository
 public interface ClassYearRepository extends JpaRepository<ClassYear, Integer> {
-
 }

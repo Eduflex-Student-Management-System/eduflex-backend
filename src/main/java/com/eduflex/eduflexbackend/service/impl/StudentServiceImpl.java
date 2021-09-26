@@ -53,4 +53,12 @@ public class StudentServiceImpl implements StudentService {
         ClassYear classYear= classYearRepository.findById(classYearId).get();
         return studentRepository.findStudentsByClassYear(classYear);
     }
+
+    @Override
+    public Student addClassYearToStudent(int studentId, int classYearId) {
+        Student student = studentRepository.findById(studentId).get();
+        ClassYear classYear = classYearRepository.findById(classYearId).get();
+        student.setClassYear(classYear);
+        return studentRepository.save(student);
+    }
 }

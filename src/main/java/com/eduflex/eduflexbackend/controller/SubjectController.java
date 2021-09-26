@@ -61,4 +61,6 @@ public class SubjectController {
 	public void deleteSubjectByFacultyId(@PathVariable int subjectId,@PathVariable int facultyId){
 		 subjectService.deleteSubjectByFacultyId(subjectId,facultyId);
 	}
+
+
 }
