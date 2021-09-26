@@ -34,6 +34,7 @@ public class Student {
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private Result result;
+
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="classYearId" , referencedColumnName="classYearId")
@@ -42,6 +43,10 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     @ToString.Exclude
     List<AttendanceReport> attendanceReportList;
+
+    @OneToOne
+    @JoinColumn(name="courseId", referencedColumnName = "courseId")
+    private Course course;
 
     @Override
     public boolean equals(Object o) {

@@ -15,6 +15,5 @@ public interface StudentService {
     void deleteStudent(int studentId);
     Student getStudentById(int studentId);
     List<Student> getAllStudentsByClassYearId(int classYearId);
-
-
+    Student addClassYearToStudent(int studentId, int classYearId);
 }

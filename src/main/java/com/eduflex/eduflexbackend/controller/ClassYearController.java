@@ -35,9 +35,4 @@ public class ClassYearController {
     public List<ClassYear> getAllClassYears() {
         return classYearService.getAllClassYears();
     }
-    
-    @PutMapping("/student/{studentId}/classYear/{classYearId}")
-    public ClassYear addClassYearToStudent(@PathVariable int studentId, @PathVariable int classYearId){
-        return classYearService.addClassYearToStudent(studentId,classYearId);
-    }
 }
