@@ -13,23 +13,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eduflex.eduflexbackend.model.Course;
+import com.eduflex.eduflexbackend.model.Student;
+import com.eduflex.eduflexbackend.repository.StudentRepository;
 import com.eduflex.eduflexbackend.service.CourseService;
 
 @CrossOrigin
 @RestController
-public class CourseController {
+public class CourseController{
 	
 	@Autowired
 	CourseService courseService;
-	
+
 	@PostMapping("/course")
 	public Course addCourse(@RequestBody Course course) {
 		return courseService.addCourse(course);
 	}
-
-	@PutMapping("/course")
-	public Course updateCourse(@RequestBody Course course) {
-		return courseService.updateCourse(course);
+	
+	@PutMapping("/student/{studentId}/course/{courseId}")
+	public Student addCourseToStudent(@PathVariable int studentId, @PathVariable int courseId) {
+		return courseService.addCourseToStudent(studentId, courseId);
 	}
 
 	@GetMapping("/courses")
@@ -37,14 +39,9 @@ public class CourseController {
 		return courseService.getAllCourses();
 	}
 
-	@DeleteMapping("/course/{courseId}")
-	public void deleteCourse(@PathVariable int courseId) {
-		courseService.deleteCourse(courseId);
-	}
-	
 	@GetMapping("/course/{courseId}")
-	public Course getCourseById(@PathVariable int courseId) {
-		return courseService.getCourseById(courseId);
+	public Course getCourseByCourseId(@PathVariable int courseId) {
+		return courseService.getCourseByCourseId(courseId);
 	}
 	
 	

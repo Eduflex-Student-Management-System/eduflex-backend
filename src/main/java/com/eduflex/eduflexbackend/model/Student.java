@@ -3,6 +3,8 @@ package com.eduflex.eduflexbackend.model;
 import lombok.*;
 import org.hibernate.Hibernate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -28,7 +30,11 @@ public class Student {
 
     @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
     private List<StudentLeave> studentLeaveList;
-
+    
+    @OneToOne
+    @JoinColumn(name="courseId", referencedColumnName = "courseId")
+    private Course course;
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
