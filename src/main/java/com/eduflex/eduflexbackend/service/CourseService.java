@@ -9,6 +9,6 @@ import java.util.List;
 public interface CourseService {
 	Course addCourse(Course course);
 	Student addCourseToStudent(int studentId, int courseId);
-    List<Course> getAllCourses();
-    Course getCourseByCourseId(int courseId);
+    	List<Course> getAllCourses();
+    	Course getCourseByCourseId(int courseId);
 }
