@@ -43,6 +43,4 @@ public class CourseController{
 	public Course getCourseByCourseId(@PathVariable int courseId) {
 		return courseService.getCourseByCourseId(courseId);
 	}
-	
-	
 }
