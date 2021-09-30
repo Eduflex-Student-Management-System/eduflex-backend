@@ -47,9 +47,9 @@ public class AttendanceReportController {
 
     @GetMapping("/attendanceReport/student/{studentId}")
     public List<AttendanceReport> getAttendanceReportsByStudentId(@PathVariable int studentId) {
-    	if(!studentRepository.existsById(studentId)) {
-    		throw new EduflexDataNotFoundException("Can't delete attendance, studentId: "+studentId+" not persent in database");
-    	}
+    	if(attendanceReportRepository.findAll().size() == 0) {
+			throw new EduflexDataNotFoundException("Attendance with studentId "+studentId+" Not Found, Add Attendance first");
+		}
         return  attendanceReportService.getAttendanceReportsByStudentId(studentId);
     }
 
@@ -64,7 +64,7 @@ public class AttendanceReportController {
     @DeleteMapping("/attendanceReport/{attendanceReportId}")
     public void deleteAttendanceReportByAttendanceReportId(@PathVariable int attendanceReportId) {
     	if(!attendanceReportRepository.existsById(attendanceReportId)) {
-    		throw new EduflexDataNotFoundException("Can't delete student, studentId: "+attendanceReportId+" not persent in database");
+    		throw new EduflexDataNotFoundException("Can't delete attendnace, attendanceReportId: "+attendanceReportId+" not persent in database");
     	}
         attendanceReportService.deleteAttendanceReportByAttendanceReportId(attendanceReportId);
     }
