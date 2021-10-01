@@ -18,7 +18,7 @@ pipeline {
         stage('Build Docker image'){
             steps {
 
-                sh 'docker build -t  lala14/eduflex-backend:${BUILD_NUMBER} .'
+                sh 'docker build -t  akshaysargar/eduflex-backend:${BUILD_NUMBER} .'
             }
         }
 
@@ -26,21 +26,21 @@ pipeline {
 
             steps {
                  withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "docker login -u lala14 -p ${Dockerpwd}"
+                    sh "docker login -u akshaysargar -p ${Dockerpwd}"
                 }
             }
         }
 
         stage('Docker Push'){
             steps {
-                sh 'docker push lala14/eduflex-backend:${BUILD_NUMBER}'
+                sh 'docker push akshaysargar/eduflex-backend:${BUILD_NUMBER}'
             }
         }
 
         stage('Docker deploy'){
             steps {
 
-                sh 'docker run -itd -p  8081:8080 lala14/eduflex-backend:${BUILD_NUMBER}'
+                sh 'docker run -itd -p  8081:8080 akshaysargar/eduflex-backend:${BUILD_NUMBER}'
             }
         }
 
