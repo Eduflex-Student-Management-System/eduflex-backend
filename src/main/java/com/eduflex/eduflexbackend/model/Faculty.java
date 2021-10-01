@@ -38,7 +38,7 @@ public class Faculty {
 	
 	@Lob 
 	@Column(columnDefinition = "CLOB")
-	private String facultyAvtar;
+	private String facultyAvatar;
 	
 	@OneToMany(mappedBy="faculty" ,cascade=CascadeType.ALL)
 	List<FacultyLeave> facultyLeaveList;
