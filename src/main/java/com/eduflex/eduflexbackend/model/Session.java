@@ -1,25 +1,19 @@
 package com.eduflex.eduflexbackend.model;
 
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import lombok.Data;
 import org.hibernate.annotations.Type;
 
-import lombok.Data;
+import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
 @Table
 public class Session {
-	@Id
-	@GeneratedValue
-	private int sessionId;
-	@Column
-	@Type(type="timestamp")
-	private Date sessionDateTime;
+    @Id
+    @GeneratedValue
+    private int sessionId;
+    @Column
+    @Type(type = "timestamp")
+    private Date sessionDateTime;
 }

@@ -43,20 +43,20 @@ public class SubjectCRUDTest {
 	@Test
 	@Order(2)
 	public void addSubjectToFaculty() {
-		Faculty faculty = new Faculty();
-		faculty.setFacultyName("Vinay");
-		faculty.setFacultyUsername("vinayiganhalli");;
-		faculty.setFacultyPassword("Vinay@123");
-		faculty.setFacultyCity("Hubli");
-		faculty.setFacultyAvatar("vinayIMGgoesHere");
-		Faculty newFaculty = facultyService.addFaculty(faculty);
-		
-		Subject subject = new Subject();
-		subject.setSubjectName("Java");
-		subject.setFaculty(newFaculty);
-		subjectService.addSubjectToFaculty(1, 1);
-		assertNotNull(subjectService.getSubjectBySubjectId(1));
-	}
+        Faculty faculty = new Faculty();
+        faculty.setFacultyName("Vinay");
+        faculty.setFacultyUsername("vinayiganhalli");
+        faculty.setFacultyPassword("Vinay@123");
+        faculty.setFacultyCity("Hubli");
+        faculty.setFacultyAvatar("vinayIMGgoesHere");
+        Faculty newFaculty = facultyService.addFaculty(faculty);
+
+        Subject subject = new Subject();
+        subject.setSubjectName("Java");
+        subject.setFaculty(newFaculty);
+        subjectService.addSubjectToFaculty(1, 1);
+        assertNotNull(subjectService.getSubjectBySubjectId(1));
+    }
 	
 	@Test
 	@Order(3)

@@ -1,6 +1,9 @@
 package com.eduflex.eduflexbackend.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -14,21 +17,21 @@ import java.util.Objects;
 @Table
 public class Course {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int courseId;
-	private String courseName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int courseId;
+    private String courseName;
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-		Course course = (Course) o;
-		return Objects.equals(courseId, course.courseId);
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Course course = (Course) o;
+        return Objects.equals(courseId, course.courseId);
+    }
 
-	@Override
-	public int hashCode() {
-		return 0;
-	}
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }

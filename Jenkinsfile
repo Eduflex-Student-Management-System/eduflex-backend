@@ -17,7 +17,6 @@ pipeline {
 
         stage('Build Docker image'){
             steps {
-
                 sh 'docker build -t  akshaysargar/eduflex-backend:${BUILD_NUMBER} .'
             }
         }
@@ -45,7 +44,7 @@ pipeline {
         }
 
 
-        stage('Archving') {
+        stage('Archiving') {
             steps {
                  archiveArtifacts '**/target/*.jar'
             }

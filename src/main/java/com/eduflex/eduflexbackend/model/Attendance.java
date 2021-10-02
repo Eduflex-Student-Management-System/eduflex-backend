@@ -1,6 +1,9 @@
 package com.eduflex.eduflexbackend.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -15,15 +18,13 @@ import java.util.Objects;
 @Entity
 @Table
 public class Attendance {
+    @OneToMany(mappedBy = "attendance", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    List<AttendanceReport> attendanceReportList;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int attendanceId;
     private Date attendanceDate;
-
-    @OneToMany(mappedBy = "attendance", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    List<AttendanceReport> attendanceReportList;
-
     @OneToOne
     @JoinColumn(name = "subjectId", referencedColumnName = "subjectId")
     @ToString.Exclude

@@ -1,6 +1,9 @@
 package com.eduflex.eduflexbackend.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -15,7 +18,7 @@ import java.util.Objects;
 public class Hod {
 
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hodId;
     private String hodName;
     private String hodUserName;

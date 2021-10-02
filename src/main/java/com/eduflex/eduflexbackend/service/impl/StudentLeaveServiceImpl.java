@@ -23,8 +23,8 @@ public class StudentLeaveServiceImpl implements StudentLeaveService {
     public void deleteStudentLeaveByStudentId(int studentId, int studentLeaveId) {
         Student student = studentRepository.findById(studentId).get();
         List<StudentLeave> studentLeaveList = studentLeaveRepository.findStudentLeavesByStudent(student);
-        for(StudentLeave studentLeave : studentLeaveList) {
-            if(studentLeave.getStudentLeaveId() == studentLeaveId) {
+        for (StudentLeave studentLeave : studentLeaveList) {
+            if (studentLeave.getStudentLeaveId() == studentLeaveId) {
                 studentLeaveRepository.deleteById(studentLeaveId);
             }
         }

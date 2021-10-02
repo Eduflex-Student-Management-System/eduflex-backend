@@ -1,6 +1,9 @@
 package com.eduflex.eduflexbackend.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -18,18 +21,16 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table
 public class ClassYear {
 
+    @OneToMany(mappedBy = "classYear")
+    @ToString.Exclude
+    List<Student> studentList;
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private int classYearId;
-
     @Temporal(TemporalType.DATE)
     private Date classYearStartDate;
     @Temporal(TemporalType.DATE)
     private Date classYearEndDate;
-
-    @OneToMany(mappedBy="classYear")
-    @ToString.Exclude
-    List<Student> studentList;
 
     @Override
     public boolean equals(Object o) {

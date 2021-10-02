@@ -2,7 +2,6 @@ package com.eduflex.eduflexbackend.service.impl;
 
 import com.eduflex.eduflexbackend.model.ClassYear;
 import com.eduflex.eduflexbackend.model.Student;
-import com.eduflex.eduflexbackend.model.StudentLeave;
 import com.eduflex.eduflexbackend.repository.ClassYearRepository;
 import com.eduflex.eduflexbackend.repository.StudentLeaveRepository;
 import com.eduflex.eduflexbackend.repository.StudentRepository;
@@ -50,7 +49,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getAllStudentsByClassYearId(int classYearId) {
-        ClassYear classYear= classYearRepository.findById(classYearId).get();
+        ClassYear classYear = classYearRepository.findById(classYearId).get();
         return studentRepository.findStudentsByClassYear(classYear);
     }
 
@@ -60,5 +59,10 @@ public class StudentServiceImpl implements StudentService {
         ClassYear classYear = classYearRepository.findById(classYearId).get();
         student.setClassYear(classYear);
         return studentRepository.save(student);
+    }
+
+    @Override
+    public Student getStudentByStudentUsernameAndStudentPassword(String studentUsername, String studentPassword) {
+        return studentRepository.findStudentByStudentUsernameAndStudentPassword(studentUsername, studentPassword);
     }
 }

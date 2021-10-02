@@ -1,16 +1,15 @@
 package com.eduflex.eduflexbackend.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.eduflex.eduflexbackend.model.Hod;
 import com.eduflex.eduflexbackend.repository.HodRepository;
 import com.eduflex.eduflexbackend.service.HodService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
-public class HodServiceImpl implements HodService{
+public class HodServiceImpl implements HodService {
 
     @Autowired
     HodRepository hodRepository;

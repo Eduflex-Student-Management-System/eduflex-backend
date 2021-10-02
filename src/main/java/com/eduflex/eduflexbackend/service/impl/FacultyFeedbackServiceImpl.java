@@ -5,57 +5,56 @@ import com.eduflex.eduflexbackend.model.FacultyFeedback;
 import com.eduflex.eduflexbackend.repository.FacultyFeedbackRepository;
 import com.eduflex.eduflexbackend.repository.FacultyRepository;
 import com.eduflex.eduflexbackend.service.FacultyFeedbackService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class FacultyFeedbackServiceImpl implements FacultyFeedbackService{
-	
-	@Autowired
-	FacultyFeedbackRepository facultyFeedbackRepository;
-	
-	@Autowired
-	FacultyRepository facultyRepository;
+public class FacultyFeedbackServiceImpl implements FacultyFeedbackService {
 
-	@Override
-	public FacultyFeedback addFacultyFeedbackToFaculty(int facultyId, FacultyFeedback facultyFeedback) {
-		Faculty faculty = facultyRepository.findById(facultyId).get();
-		facultyFeedback.setFaculty(faculty);
-        	return facultyFeedbackRepository.save(facultyFeedback);
-	}
+    @Autowired
+    FacultyFeedbackRepository facultyFeedbackRepository;
 
-	@Override
-	public FacultyFeedback getFacultyFeedbackByFacultyFeedbackId(int facultyFeedbackId) {
-        	return facultyFeedbackRepository.findById(facultyFeedbackId).get();
-    	}
+    @Autowired
+    FacultyRepository facultyRepository;
 
-	@Override
-	public List<FacultyFeedback> getFacultyFeedbacksByFacultyId(int facultyId) {
-		Faculty faculty = facultyRepository.findById(facultyId).get();
-	     	return facultyFeedbackRepository.findFacultyFeedbacksByFaculty(faculty);
-	}
+    @Override
+    public FacultyFeedback addFacultyFeedbackToFaculty(int facultyId, FacultyFeedback facultyFeedback) {
+        Faculty faculty = facultyRepository.findById(facultyId).get();
+        facultyFeedback.setFaculty(faculty);
+        return facultyFeedbackRepository.save(facultyFeedback);
+    }
 
-	@Override
-	public List<FacultyFeedback> getAllFacultyFeedbacks() {
-		return facultyFeedbackRepository.findAll();
-	}
+    @Override
+    public FacultyFeedback getFacultyFeedbackByFacultyFeedbackId(int facultyFeedbackId) {
+        return facultyFeedbackRepository.findById(facultyFeedbackId).get();
+    }
 
-	@Override
-	public void deleteFacultyFeedbackByFacultyId(int facultyId, int facultyFeedbackId) {
+    @Override
+    public List<FacultyFeedback> getFacultyFeedbacksByFacultyId(int facultyId) {
+        Faculty faculty = facultyRepository.findById(facultyId).get();
+        return facultyFeedbackRepository.findFacultyFeedbacksByFaculty(faculty);
+    }
+
+    @Override
+    public List<FacultyFeedback> getAllFacultyFeedbacks() {
+        return facultyFeedbackRepository.findAll();
+    }
+
+    @Override
+    public void deleteFacultyFeedbackByFacultyId(int facultyId, int facultyFeedbackId) {
         Faculty faculty = facultyRepository.findById(facultyId).get();
         List<FacultyFeedback> facultyFeedbackList = facultyFeedbackRepository.findFacultyFeedbacksByFaculty(faculty);
-        	for (FacultyFeedback facultyFeedback : facultyFeedbackList) {
-            		if (facultyFeedback.getFacultyFeedbackId() == facultyFeedbackId) {
-                		facultyFeedbackRepository.deleteById(facultyFeedback.getFacultyFeedbackId());
-            		} 
-        	}
-	}
+        for (FacultyFeedback facultyFeedback : facultyFeedbackList) {
+            if (facultyFeedback.getFacultyFeedbackId() == facultyFeedbackId) {
+                facultyFeedbackRepository.deleteById(facultyFeedback.getFacultyFeedbackId());
+            }
+        }
+    }
 
-	@Override
-	public void deleteFacultyFeedbackByFacultyFeedbackId(int facultyFeedbackId) {
-		 facultyFeedbackRepository.deleteById(facultyFeedbackId);
-	}
+    @Override
+    public void deleteFacultyFeedbackByFacultyFeedbackId(int facultyFeedbackId) {
+        facultyFeedbackRepository.deleteById(facultyFeedbackId);
+    }
 }

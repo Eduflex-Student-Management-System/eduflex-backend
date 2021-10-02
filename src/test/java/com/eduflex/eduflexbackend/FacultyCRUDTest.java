@@ -28,15 +28,15 @@ public class FacultyCRUDTest {
 	@Test
 	@Order(1)
 	public void addFacultyTest() {
-		Faculty faculty = new Faculty();
-		faculty.setFacultyName("Vinay");
-		faculty.setFacultyUsername("vinayiganhalli");;
-		faculty.setFacultyPassword("Vinay@123");
-		faculty.setFacultyCity("Hubli");
-		faculty.setFacultyAvatar("vinayIMGgoesHere");
-		facultyService.addFaculty(faculty);
-		assertNotNull(facultyService.getFacultyByFacultyId(1));
-	}
+        Faculty faculty = new Faculty();
+        faculty.setFacultyName("Vinay");
+        faculty.setFacultyUsername("vinayiganhalli");
+        faculty.setFacultyPassword("Vinay@123");
+        faculty.setFacultyCity("Hubli");
+        faculty.setFacultyAvatar("vinayIMGgoesHere");
+        facultyService.addFaculty(faculty);
+        assertNotNull(facultyService.getFacultyByFacultyId(1));
+    }
 	
 	@Test
 	@Order(2)

@@ -11,5 +11,6 @@ import java.util.List;
 @Repository
 public interface AttendanceReportRepository extends JpaRepository<AttendanceReport, Integer> {
     List<AttendanceReport> findAttendanceReportsByStudent(Student student);
+
     List<AttendanceReport> findAttendanceReportsByAttendance(Attendance attendance);
 }

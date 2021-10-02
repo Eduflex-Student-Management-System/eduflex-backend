@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface AttendanceService {
     Attendance getAttendanceById(int attendanceId);
+
     Attendance addSubjectToAttendance(int subjectId, Attendance Attendance);
+
     void deleteAttendanceByAttendanceId(int attendanceId);
+
     List<Attendance> getAllAttendances();
 }

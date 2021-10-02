@@ -59,4 +59,9 @@ public class AttendanceReportServiceImpl implements AttendanceReportService {
     public void deleteAttendanceReportByAttendanceReportId(int attendanceReportId) {
         attendanceReportRepository.deleteById(attendanceReportId);
     }
+
+    @Override
+    public AttendanceReport getAttendanceReportByAttendanceReportId(int attendanceReportId) {
+        return attendanceReportRepository.findById(attendanceReportId).get();
+    }
 }

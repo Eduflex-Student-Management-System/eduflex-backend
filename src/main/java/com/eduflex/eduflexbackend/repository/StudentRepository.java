@@ -11,4 +11,5 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     List<Student> findStudentsByClassYear(ClassYear classYear);
 
+    Student findStudentByStudentUsernameAndStudentPassword(String studentUsername, String studentPassword);
 }

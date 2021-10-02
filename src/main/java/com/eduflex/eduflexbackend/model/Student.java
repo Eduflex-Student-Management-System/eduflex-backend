@@ -3,10 +3,8 @@ package com.eduflex.eduflexbackend.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,6 +16,9 @@ import java.util.Objects;
 @Table
 public class Student {
 
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    List<AttendanceReport> attendanceReportList;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int studentId;
@@ -25,31 +26,21 @@ public class Student {
     private String studentUsername;
     private String studentPassword;
     private String studentCity;
-
     @Lob
     @Column(columnDefinition = "CLOB")
     private String studentAvatar;
-
-    @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<StudentLeave> studentLeaveList;
-
-    @OneToMany(mappedBy="student", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<StudentFeedback> studentFeedbackList;
-
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private Result result;
-
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="classYearId" , referencedColumnName="classYearId")
+    @JoinColumn(name = "classYearId", referencedColumnName = "classYearId")
     private ClassYear classYear;
-
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    List<AttendanceReport> attendanceReportList;
-
     @OneToOne
-    @JoinColumn(name="courseId", referencedColumnName = "courseId")
+    @JoinColumn(name = "courseId", referencedColumnName = "courseId")
     private Course course;
 
     @Override
