@@ -3,17 +3,13 @@ pipeline {
     stages {
         stage('Compile and Clean') {
             steps {
-                withMaven(maven : 'apache-maven-3.8.1') {
-                    bat 'mvn clean compile'
-                }
+                sh "mvn clean compile"
             }
         }
 
         stage('deploy') {
             steps {
-                withMaven(maven : 'apache-maven-3.8.1') {
-                    bat "mvn package"
-                }
+                sh "mvn package"
             }
         }
 
