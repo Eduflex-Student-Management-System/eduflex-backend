@@ -11,39 +11,36 @@ import java.util.List;
 @RestController
 public class FacultyController {
 
-    @Autowired
-    FacultyService facultyService;
+	@Autowired
+	FacultyService facultyService;
 
-    @Autowired
-    FacultyRepository facultyRepository;
+	@PostMapping("/faculty")
+	public Faculty addFaculty(@RequestBody Faculty faculty) {
+		return facultyService.addFaculty(faculty);
+	}
 
-    @PostMapping("/faculty")
-    public Faculty addFaculty(@RequestBody Faculty faculty) {
-        return facultyService.addFaculty(faculty);
-    }
+	@PutMapping("/faculty")
+	public Faculty updateFaculty(@RequestBody Faculty faculty) {
+		return facultyService.updateFaculty(faculty);
+	}
 
-    @PutMapping("/faculty")
-    public Faculty updateFaculty(@RequestBody Faculty faculty) {
-        return facultyService.updateFaculty(faculty);
-    }
+	@GetMapping("/faculties")
+	public List<Faculty> getAllFaculties() {
+		return facultyService.getAllFaculties();
+	}
 
-    @GetMapping("/faculties")
-    public List<Faculty> getAllFaculties() {
-        return facultyService.getAllFaculties();
-    }
+	@DeleteMapping("/faculty/{facultyId}")
+	public void deleteFaculty(@PathVariable int facultyId) {
+		facultyService.deleteFaculty(facultyId);
+	}
 
-    @DeleteMapping("/faculty/{facultyId}")
-    public void deleteFaculty(@PathVariable int facultyId) {
-        facultyService.deleteFaculty(facultyId);
-    }
+	@GetMapping("/faculty/{facultyId}")
+	public Faculty getFacultyById(@PathVariable int facultyId) {
+		return facultyService.getFacultyByFacultyId(facultyId);
+	}
 
-    @GetMapping("/faculty/{facultyId}")
-    public Faculty getFacultyById(@PathVariable int facultyId) {
-        return facultyService.getFacultyByFacultyId(facultyId);
-    }
-
-    @GetMapping("/faculty/{facultyUsername}/{facultyPassword}")
-    public Faculty getFacultyByFacultyUsernameAndAndFacultyPassword(@PathVariable String facultyUsername, @PathVariable String facultyPassword) {
-        return facultyService.getFacultyByFacultyUsernameAndAndFacultyPassword(facultyUsername, facultyPassword);
-    }
+	@GetMapping("/faculty/{facultyUsername}/{facultyPassword}")
+	public Faculty getFacultyByFacultyUsernameAndAndFacultyPassword(@PathVariable String facultyUsername, @PathVariable String facultyPassword) {
+		return facultyService.getFacultyByFacultyUsernameAndAndFacultyPassword(facultyUsername, facultyPassword);
+	}
 }
