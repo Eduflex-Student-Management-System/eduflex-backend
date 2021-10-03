@@ -19,25 +19,25 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table
 public class Faculty {
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private int facultyId;
-	private String facultyName;
-	private String facultyUsername;
-	private String facultyPassword;
-	private String facultyCity;
-	
-	@Lob 
-	@Column(columnDefinition = "CLOB")
-	private String facultyAvatar;
-	
-	@OneToMany(mappedBy="faculty" ,cascade=CascadeType.ALL)
-	List<FacultyLeave> facultyLeaveList;
-	
-	@OneToMany(mappedBy="faculty",cascade=CascadeType.ALL)
-	List<FacultyFeedback> facultyFeedbackList;
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    private int facultyId;
+    private String facultyName;
+    private String facultyUsername;
+    private String facultyPassword;
+    private String facultyCity;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "faculty" ,cascade=CascadeType.ALL)
-	List<Subject> subjectsList;
+    @Lob
+    @Column(columnDefinition = "CLOB")
+    private String facultyAvatar;
+
+    @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
+    List<FacultyLeave> facultyLeaveList;
+
+    @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
+    List<FacultyFeedback> facultyFeedbackList;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
+    List<Subject> subjectsList;
 }

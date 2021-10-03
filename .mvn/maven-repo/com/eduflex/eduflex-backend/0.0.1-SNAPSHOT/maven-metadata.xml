@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.eduflex</groupId>
+  <artifactId>eduflex-backend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20211003.035753</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20211003035753</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.0.1-20211003.035753-1</value>
+        <updated>20211003035753</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.1-20211003.035753-1</value>
+        <updated>20211003035753</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

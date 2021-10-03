@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.eduflex</groupId>
+  <artifactId>eduflex-backend</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20211003035753</lastUpdated>
+  </versioning>
+</metadata>

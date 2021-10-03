@@ -1,35 +1,24 @@
 package com.eduflex.eduflexbackend.controller;
 
-import java.util.List;
+import com.eduflex.eduflexbackend.model.Student;
+import com.eduflex.eduflexbackend.repository.ClassYearRepository;
+import com.eduflex.eduflexbackend.repository.StudentRepository;
+import com.eduflex.eduflexbackend.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.apache.commons.lang3.StringUtils;
-
-import com.eduflex.eduflexbackend.exception.EduflexDataNotFoundException;
-import com.eduflex.eduflexbackend.model.Student;
-import com.eduflex.eduflexbackend.repository.StudentRepository;
-import com.eduflex.eduflexbackend.repository.ClassYearRepository;
-import com.eduflex.eduflexbackend.service.StudentService;
+import java.util.List;
 
 @RestController
 public class StudentController {
 
     @Autowired
     StudentService studentService;
-    
+
     @Autowired
     StudentRepository studentRepository;
-    
+
     @Autowired
     ClassYearRepository classYearRepository;
 
