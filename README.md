@@ -62,12 +62,7 @@ The EduFlex has 3 User Interfaces, The HOD Side, that can see overall summary ch
 * Send Feedback to HOD
 
 ## Usage
-
-## Contributors
-
-This is a group project, below the list of contributors.
-  
-  
+ 
 ## Getting Started
 1. On GitHub, navigate to the main page of the repository.
 2. Above the list of files, click  Code.
@@ -84,9 +79,12 @@ git clone https://github.com/Eduflex-Student-Management-System/eduflex-backend.g
 7. Press Enter to create your local clone.
 
 ## Contributors
+
+This is a group project, below the list of contributors.
 - [Lalit Ghongade](https://github.com/lalitghongade)
 - [Akshay Sargar](https://github.com/sargarakshay)
 - [Kumari Suruchi Suman](https://github.com/sumansuruchi)
 - [Mohammad Wakeel](https://github.com/MohammdWakeel)
 
+##
 
