@@ -1,5 +1,5 @@
-![](https://img.shields.io/badge/Spring%20Boot-v2.4.10-success?style=for-the-badge&logo=spring)
-![](https://img.shields.io/badge/Maven-v3.8.1-informational?style=for-the-badge) 
+![](https://img.shields.io/badge/Contributors-4-red?style=for-the-badge&logo=github)  ![](https://img.shields.io/badge/Branches-18-yellow?style=for-the-badge) ![](https://img.shields.io/badge/Spring%20Boot-v2.4.10-success?style=for-the-badge&logo=spring)
+![](https://img.shields.io/badge/Angular-v8.3.8-red?style=for-the-badge&logo=angular) ![](https://img.shields.io/badge/Maven-v3.8.1-informational?style=for-the-badge) 
 
 # EduFlex
 The Eduflex Project backend developed using Java **Spring Boot framework** and we added dependencies of Spring web, H2 database, JPA, Spring Boot DevTool and Lambok in our project and for frontend we have used Angular, HTML, CSS, and TypeScript.
@@ -85,5 +85,8 @@ git clone https://github.com/Eduflex-Student-Management-System/eduflex-backend.g
 
 ## Contributors
 - [Lalit Ghongade](https://github.com/lalitghongade)
+- [Akshay Sargar](https://github.com/sargarakshay)
+- [Kumari Suruchi Suman](https://github.com/sumansuruchi)
+- [Mohammad Wakeel](https://github.com/MohammdWakeel)
 
 
