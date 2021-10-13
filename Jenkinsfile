@@ -1,52 +1,50 @@
 pipeline {
     agent any
-    stages {
-        stage('Compile and Clean') {
-            steps {
-                bat "mvn clean compile"
-            }
-        }
+         stages {
+            stage('Compile and Clean') {
+                steps {
+                       sh "mvn clean compile"
+                       }
+                }
 
-        stage('Test') {
-            steps {
-                bat "mvn test"
-            }
-        }
 
-        stage('Deploy') {
-            steps {
-                bat "mvn package"
-            }
-        }
-
+            stage('deploy') {
+                steps {
+                 sh "mvn package -DskipTests"
+                 }
+                  }
+        
         stage('Build Docker image'){
             steps {
-                bat 'docker build -t  akshaysargar/eduflex-backend:${BUILD_NUMBER} .'
+
+                sh 'docker build -t  lala14/eduflex-backend:${BUILD_NUMBER} .'
             }
         }
 
         stage('Docker Login'){
+
             steps {
-                 withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    bat "docker login -u akshaysargar -p ${Dockerpwd}"
+                withCredentials([string(credentialsId: 'Docker_id', variable: 'DockerPassword')]) {
+                    sh "docker login -u lala14 -p ${DockerPassword}"
                 }
             }
         }
 
         stage('Docker Push'){
             steps {
-                bat 'docker push akshaysargar/eduflex-backend:${BUILD_NUMBER}'
+                sh 'docker push lala14/eduflex-backend:${BUILD_NUMBER}'
             }
         }
 
         stage('Docker deploy'){
             steps {
-                bat 'docker run -itd -p  8081:8080 akshaysargar/eduflex-backend:${BUILD_NUMBER}'
+                sh 'docker kill $(docker ps -q)'
+                sh 'docker run -itd -p  2020:2020 lala14/eduflex-backend:${BUILD_NUMBER}'
             }
         }
 
 
-        stage('Archiving') {
+        stage('Archving') {
             steps {
                  archiveArtifacts '**/target/*.jar'
             }
