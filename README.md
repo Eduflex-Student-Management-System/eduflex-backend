@@ -60,8 +60,6 @@ The EduFlex has 3 User Interfaces, The HOD Side, that can see overall summary ch
 * Add/Update Result
 * Apply for Leave
 * Send Feedback to HOD
-
-## Usage
  
 ## Getting Started
 1. On GitHub, navigate to the main page of the repository.
